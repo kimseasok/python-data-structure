@@ -1,0 +1,50 @@
+# List Comprehensions
+# new_list = [transform sequence[filter]]
+
+import random
+
+# get values within range
+under_10 = [x for x in range(10)]
+print(under_10)
+
+# get square values
+squares = [x ** 2 for x in range(10)]
+print(squares)
+
+# get odd numbers
+odds = [x for x in range(10) if x % 2 == 1]
+print(odds)
+
+# get multiples of 10
+ten_x = [x * 10 for x in range(10)]
+print('nums: ' + str(ten_x))
+
+# get all number from string
+s = 'I love 2 go t0 the store 7 times a we3k.'
+nums = [n for n in s if n.isnumeric()]
+print('Nums: ' + ''.join(nums))
+
+# get index of a list item
+names = ['Comos', 'Pedro', 'Anu', 'Ray']
+idx = [k for k, v in enumerate(names) if v == 'Anu']
+print('Index = ' + str(idx[0]))
+
+# delete an item from
+letters = [x for x in 'ABCDEF']
+# make shuffle random list from string 'ABCDEF'
+random.shuffle(letters)
+print(letters)
+
+letrs = [a for a in letters if a not in 'CD']
+print(letrs)
+
+# if-else in list comprehensions
+# conditional statement should before iterator
+nums_list = [5, 3, 10, 18, 6, 7]
+nums1 = [x if x % 2 == 0 else 10 * x for x in nums_list]
+print('new list: ' + str(nums1))
+
+# nested loop in list comprehension
+nested_list = [[1, 2], [3, 4]]
+new_list = [sub **2 if sub % 2 == 0 else sub for arr in nested_list for sub in arr]
+print(new_list)
